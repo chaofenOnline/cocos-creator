@@ -23,5 +23,4 @@ export class FitWidthCamerats extends Component {
     onDestroy() {
         window.removeEventListener('resize', this.updateFov);
     }
-
 }
