@@ -1,0 +1,16 @@
+{
+  "ver": "4.0.1",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "9fc79bfc-ab3f-4fd0-b2ed-047e8119f357",
+  "files": [
+    ".js",
+    ".trans"
+  ],
+  "subMetas": {},
+  "userData": {
+    "importAsPlugin": false,
+    "moduleId": "project:///assets/PlayerCtrl.js",
+    "importerSettings": 0
+  }
+}
