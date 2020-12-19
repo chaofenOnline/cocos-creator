@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Vec3, director, Director, easing, math, Quat, Mat4, v3 } from "cc";
+import { _decorator, Component, Node, Vec3, director, Director, easing, math, Quat, Mat4, v3, SystemEvent, systemEvent } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 const v3_0 = new Vec3();
@@ -31,12 +31,14 @@ export class CameraFollow extends Component {
     
     onLoad() {
         this.ins = this;
+
+
     }
 
-    /**
-     * 位置及角度跟随
-     */
-    update(dt: number) {
+
+
+
+    lateUpdate(dt){
         const eulerY = this.lookTarget.eulerAngles.y;
         const _quat = Quat.fromEuler(new Quat(), 0, eulerY, 0);
         const _mat4 = Mat4.fromRT(new Mat4(), _quat, this.lookTarget.worldPosition);
@@ -49,4 +51,21 @@ export class CameraFollow extends Component {
         _look.lerp(v3_0, dt / this.damp);
         this.node.lookAt(_look);
     }
+
+    /**
+     * 位置及角度跟随
+     */
+    // update(dt: number) {
+    //     const eulerY = this.lookTarget.eulerAngles.y;
+    //     const _quat = Quat.fromEuler(new Quat(), 0, eulerY, 0);
+    //     const _mat4 = Mat4.fromRT(new Mat4(), _quat, this.lookTarget.worldPosition);
+    //     v3_0.set(this.cameraOffset);
+    //     v3_0.transformMat4(_mat4);
+    //     _pos.lerp(v3_0, dt / this.damp);
+    //     this.node.worldPosition = _pos;
+
+    //     v3_0.set(this.lookTarget.worldPosition);
+    //     _look.lerp(v3_0, dt / this.damp);
+    //     this.node.lookAt(_look);
+    // }
 }

@@ -3,5 +3,8 @@
   "script": {
     "useDefineForClassFields": false,
     "allowDeclareFields": false
+  },
+  "physics": {
+    "maxSubSteps": 1
   }
 }
